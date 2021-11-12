@@ -1,13 +1,16 @@
 <template>
   <h1>Reaction Timer</h1>
   <button @click="start">Play</button>
+  <Block v-if="isPlaying" />
 </template>
 
 <script>
+import { Block } from "./components/Block";
+
 export default {
   name: "App",
-  components: {},
-  data: () => {
+  components: { Block },
+  data() {
     return {
       isPlaying: false,
       delay: null,
@@ -16,6 +19,7 @@ export default {
 
   methods: {
     start() {
+      this.delay = 2000 * Math.random() * 5000;
       this.isPlaying = true;
     },
   },
