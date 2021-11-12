@@ -5,6 +5,14 @@
 <script>
 export default {
   props: ["delay"],
+  data() {
+    return {
+      showBlock: false,
+    };
+  },
+  mounted() {
+    setTimeout(() => {}, this.delay);
+  },
 };
 </script>
 
